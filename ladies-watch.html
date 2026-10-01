@@ -1,1 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Ladies Watches | SEMEO STORE</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f7f7f5;
+  color:#111;
+}
+
+header{
+  height:70px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  height:42px;
+}
+
+.back{
+  text-decoration:none;
+  color:#111;
+  font-size:13px;
+}
+
+.title{
+  text-align:center;
+  padding:45px 20px 30px;
+}
+
+.title h1{
+  font-size:28px;
+  letter-spacing:3px;
+}
+
+.title p{
+  margin-top:10px;
+  color:#777;
+  font-size:13px;
+}
+
+/* PRICE SECTIONS */
+
+.price-section{
+  padding:20px 5% 35px;
+}
+
+.price-title{
+  font-size:20px;
+  font-weight:bold;
+  border-bottom:1px solid #ddd;
+  padding-bottom:12px;
+  margin-bottom:18px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+/* PRODUCT */
+
+.product{
+  background:#fff;
+  border:1px solid #eee;
+}
+
+.product-image{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#eee;
+}
+
+.product-info{
+  padding:15px;
+}
+
+.product-name{
+  font-size:15px;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.product-price{
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.colours{
+  font-size:12px;
+  color:#666;
+  margin-bottom:7px;
+}
+
+.colour-buttons{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.colour-btn{
+  border:1px solid #ccc;
+  background:#fff;
+  padding:7px 11px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:11px;
+}
+
+.colour-btn.active{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.extra{
+  font-size:12px;
+  color:#666;
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+.buy-btn{
+  width:100%;
+  padding:13px;
+  background:#111;
+  color:#fff;
+  border:0;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+/* ORDER POPUP */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.order-box{
+  background:#fff;
+  width:100%;
+  max-width:500px;
+  max-height:92vh;
+  overflow:auto;
+  padding:25px;
+}
+
+.order-head{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.close{
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.selected{
+  display:flex;
+  gap:15px;
+  background:#f5f5f3;
+  padding:12px;
+  margin-bottom:20px;
+}
+
+.selected img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+}
+
+.selected-info{
+  font-size:13px;
+  line-height:1.7;
+}
+
+.field{
+  margin-bottom:13px;
+}
+
+.field label{
+  display:block;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.field input,
+.field textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  font-size:13px;
+}
+
+.field textarea{
+  min-height:75px;
+}
+
+.whatsapp{
+  width:100%;
+  padding:15px;
+  background:#111;
+  color:#fff;
+  border:0;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:35px;
+  margin-top:40px;
+}
+
+footer p{
+  color:#aaa;
+  font-size:12px;
+  margin-top:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .price-section{
+    padding-left:4%;
+    padding-right:4%;
+  }
+
+}
+
+@media(max-width:500px){
+
+  header{
+    padding:0 4%;
+  }
+
+  .logo{
+    height:35px;
+  }
+
+  .title h1{
+    font-size:23px;
+  }
+
+  .product-info{
+    padding:10px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <a href="index.html">
+    <img
+      src="semeologo1.png"
+      class="logo"
+      alt="SEMEO STORE"
+    >
+  </a>
+
+  <a href="index.html" class="back">
+    ← HOME
+  </a>
+
+</header>
+
+
+<!-- TITLE -->
+
+<section class="title">
+
+  <h1>LADIES WATCHES</h1>
+
+  <p>
+    Explore our ladies watch collection
+  </p>
+
+</section>
+
+
+<!-- ALL PRICE SECTIONS -->
+
+<div id="sections"></div>
+
+
+<!-- ORDER POPUP -->
+
+<div class="modal" id="orderModal">
+
+  <div class="order-box">
+
+    <div class="order-head">
+
+      <h2>ORDER DETAILS</h2>
+
+      <button
+        class="close"
+        onclick="closeOrder()"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="selected">
+
+      <img id="orderImage">
+
+      <div class="selected-info">
+
+        <b id="orderName"></b>
+
+        <br>
+
+        Price: ₹<span id="orderPrice"></span>
+
+        <br>
+
+        Colour:
+        <span id="orderColour"></span>
+
+      </div>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Full Name *</label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Full Name"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Phone Number *</label>
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="Phone Number"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Full Address *</label>
+
+      <textarea
+        id="address"
+        placeholder="House name, House number, Street"
+      ></textarea>
+
+    </div>
+
+
+    <div class="field">
+
+      <label>District *</label>
+
+      <input
+        id="district"
+        type="text"
+        placeholder="District"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>State *</label>
+
+      <input
+        id="state"
+        type="text"
+        value="Kerala"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>PIN Code *</label>
+
+      <input
+        id="pin"
+        type="text"
+        placeholder="PIN Code"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Size / Strap</label>
+
+      <input
+        id="size"
+        type="text"
+        placeholder="If applicable"
+      >
+
+    </div>
+
+
+    <div class="field">
+
+      <label>Additional Note</label>
+
+      <textarea
+        id="note"
+        placeholder="Optional"
+      ></textarea>
+
+    </div>
+
+
+    <button
+      class="whatsapp"
+      onclick="sendOrder()"
+    >
+      SEND ORDER ON WHATSAPP
+    </button>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <b>SEMEO STORE</b>
+
+  <p>
+    Fashion • Style • Everyday Essentials
+  </p>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   WHATSAPP NUMBER
+========================================== */
+
+const WHATSAPP_NUMBER = "919074119248";
+
+
+/* ==========================================
+   PRICE SECTIONS
+========================================== */
+
+const prices = [
+
+  149,
+  199,
+  249,
+  299,
+  349,
+  399,
+  449,
+  499,
+  549,
+  599,
+  649,
+  699,
+  749,
+  799,
+  849,
+  899,
+  949,
+  999,
+  1049,
+  1099,
+  1149,
+  1199,
+  1249,
+  1299,
+  1349,
+  1399,
+  1449,
+  1499,
+  1549,
+  1599,
+  1649,
+  1699,
+  1749,
+  1799,
+  1849,
+  1899,
+  1949,
+  1999
+
+];
+
+
+/* ==========================================
+   PRODUCTS
+
+   IVIDE AANU PINNE PRODUCTS ADD CHEYYENDATH.
+
+   IPPOL EMPTY AAYI VEKKUKA.
+========================================== */
+
+const products = [
+
+];
+
+
+/* ==========================================
+   CREATE PRICE SECTIONS
+========================================== */
+
+const sections =
+  document.getElementById("sections");
+
+
+prices.forEach(price => {
+
+  const section =
+    document.createElement("section");
+
+  section.className =
+    "price-section";
+
+  section.innerHTML = `
+
+    <div class="price-title">
+      ₹${price}
+    </div>
+
+    <div
+      class="products"
+      id="products-${price}"
+    ></div>
+
+  `;
+
+  sections.appendChild(section);
+
+});
+
+
+/* ==========================================
+   CURRENT ORDER
+========================================== */
+
+let selectedProduct = null;
+let selectedColour = "";
+let selectedImage = "";
+
+
+/* ==========================================
+   SHOW PRODUCTS
+========================================== */
+
+function showProducts(){
+
+  products.forEach(product => {
+
+    const area =
+      document.getElementById(
+        "products-" + product.price
+      );
+
+    if(!area) return;
+
+
+    const card =
+      document.createElement("div");
+
+    card.className = "product";
+
+
+    let colourHTML = "";
+
+
+    if(product.colours){
+
+      colourHTML = `
+
+        <div class="colours">
+          Colours
+        </div>
+
+        <div class="colour-buttons">
+
+          ${
+            Object.keys(product.colours)
+            .map((colour,index) => `
+
+              <button
+                class="colour-btn ${
+                  index === 0 ? "active" : ""
+                }"
+                onclick="changeColour(
+                  this,
+                  '${product.name}',
+                  '${colour}',
+                  '${product.colours[colour]}'
+                )"
+              >
+                ${colour}
+              </button>
+
+            `)
+            .join("")
+          }
+
+        </div>
+
+      `;
+
+    }
+
+
+    card.innerHTML = `
+
+      <img
+        class="product-image"
+        src="${product.image}"
+        alt="${product.name}"
+      >
+
+      <div class="product-info">
+
+        <div class="product-name">
+          ${product.name}
+        </div>
+
+        <div class="product-price">
+          ₹${product.price}
+        </div>
+
+        ${colourHTML}
+
+        ${
+          product.strap
+          ?
+          `<div class="extra">
+            Strap: ${product.strap}
+          </div>`
+          :
+          ""
+        }
+
+        ${
+          product.description
+          ?
+          `<div class="extra">
+            ${product.description}
+          </div>`
+          :
+          ""
+        }
+
+        <button
+          class="buy-btn"
+          onclick="openOrder(${JSON.stringify(product).replace(/"/g,'&quot;')})"
+        >
+          BUY NOW
+        </button>
+
+      </div>
+
+    `;
+
+
+    area.appendChild(card);
+
+  });
+
+}
+
+
+/* ==========================================
+   CHANGE COLOUR IMAGE
+========================================== */
+
+function changeColour(
+  button,
+  name,
+  colour,
+  image
+){
+
+  const card =
+    button.closest(".product");
+
+
+  const productImage =
+    card.querySelector(".product-image");
+
+
+  productImage.src = image;
+
+
+  const buttons =
+    card.querySelectorAll(".colour-btn");
+
+
+  buttons.forEach(btn => {
+
+    btn.classList.remove("active");
+
+  });
+
+
+  button.classList.add("active");
+
+}
+
+
+/* ==========================================
+   OPEN ORDER
+========================================== */
+
+function openOrder(product){
+
+  selectedProduct = product;
+
+  selectedColour =
+    Object.keys(product.colours || {})[0]
+    || "Not selected";
+
+  selectedImage =
+    product.image;
+
+
+  document.getElementById(
+    "orderImage"
+  ).src = selectedImage;
+
+
+  document.getElementById(
+    "orderName"
+  ).textContent = product.name;
+
+
+  document.getElementById(
+    "orderPrice"
+  ).textContent = product.price;
+
+
+  document.getElementById(
+    "orderColour"
+  ).textContent = selectedColour;
+
+
+  document.getElementById(
+    "orderModal"
+  ).classList.add("show");
+
+}
+
+
+/* ==========================================
+   CLOSE ORDER
+========================================== */
+
+function closeOrder(){
+
+  document.getElementById(
+    "orderModal"
+  ).classList.remove("show");
+
+}
+
+
+/* ==========================================
+   SEND TO WHATSAPP
+========================================== */
+
+function sendOrder(){
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const address =
+    document.getElementById("address").value.trim();
+
+  const district =
+    document.getElementById("district").value.trim();
+
+  const state =
+    document.getElementById("state").value.trim();
+
+  const pin =
+    document.getElementById("pin").value.trim();
+
+  const size =
+    document.getElementById("size").value.trim();
+
+  const note =
+    document.getElementById("note").value.trim();
+
+
+  if(
+    !name ||
+    !phone ||
+    !address ||
+    !district ||
+    !state ||
+    !pin
+  ){
+
+    alert(
+      "Please fill all required details."
+    );
+
+    return;
+
+  }
+
+
+  let message =
+
+`🛍️ NEW ORDER – SEMEO STORE
+
+Product: ${selectedProduct.name}
+Price: ₹${selectedProduct.price}
+
+Colour: ${selectedColour}
+${size ? "Size / Strap: " + size : ""}
+
+👤 CUSTOMER
+
+Name: ${name}
+Phone: ${phone}
+
+📍 DELIVERY ADDRESS
+
+${address}
+District: ${district}
+State: ${state}
+PIN Code: ${pin}`;
+
+
+  if(note){
+
+    message +=
+      `\n\nNote: ${note}`;
+
+  }
+
+
+  message +=
+
+`
+
+🖼️ PRODUCT IMAGE:
+${window.location.origin}/${selectedImage}`;
+
+
+  const whatsappLink =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsappLink,
+    "_blank"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
