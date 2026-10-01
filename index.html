@@ -63,8 +63,6 @@ button{
   justify-content:space-between;
 }
 
-/* LOGO IMAGE */
-
 .logo{
   display:flex;
   align-items:center;
@@ -103,7 +101,7 @@ button{
 }
 
 /* =========================================================
-   LIVE OFFER BAR
+   OFFER BAR
    ========================================================= */
 
 .offer-bar{
@@ -303,7 +301,7 @@ button{
 }
 
 /* =========================================================
-   TRENDING SWIPE
+   TRENDING
    ========================================================= */
 
 .trending-scroll{
@@ -405,7 +403,7 @@ button{
 }
 
 /* =========================================================
-   DON'T MISS DEALS
+   DEALS
    ========================================================= */
 
 .deals-scroll{
@@ -555,15 +553,6 @@ footer{
   color:#ccc;
   font-size:12px;
   margin-bottom:10px;
-}
-
-.footer-bottom{
-  border-top:1px solid #333;
-  padding-top:18px;
-
-  font-size:10px;
-  color:#888;
-  text-align:center;
 }
 
 /* =========================================================
@@ -763,40 +752,27 @@ footer{
 
 <body>
 
-
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
+<!-- HEADER -->
 
 <header class="header">
 
   <div class="header-inner">
 
-    <!-- ✏️ LOGO IMAGE -->
     <a href="index.html" class="logo">
       <img src="semeologo1.png" alt="SEMEO">
     </a>
 
     <div class="header-actions">
 
-      <button
-        class="icon-btn"
-        onclick="openSearch()"
-        aria-label="Search">
+      <button class="icon-btn" onclick="openSearch()" aria-label="Search">
         ⌕
       </button>
 
-      <button
-        class="icon-btn"
-        onclick="showCartMessage()"
-        aria-label="Cart">
+      <button class="icon-btn" onclick="showCartMessage()" aria-label="Cart">
         🛒
       </button>
 
-      <button
-        class="icon-btn"
-        onclick="openMenu()"
-        aria-label="Menu">
+      <button class="icon-btn" onclick="openMenu()" aria-label="Menu">
         ☰
       </button>
 
@@ -807,10 +783,7 @@ footer{
 </header>
 
 
-<!-- =========================================================
-     1. LIVE OFFER
-     ✏️ EDIT THIS SECTION ONLY
-     ========================================================= -->
+<!-- OFFER BAR -->
 
 <section class="offer-bar">
 
@@ -820,7 +793,7 @@ footer{
       OFFERS UP TO ₹100 FLAT OFFER
     </span>
 
-    <a href="shop.html" class="offer-button">
+    <a href="ladies-watch.html" class="offer-button">
       SHOP NOW
     </a>
 
@@ -829,29 +802,18 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     2. HERO SLIDER
-     ========================================================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-  <div
-    class="hero-slider"
-    id="heroSlider">
-  </div>
+  <div class="hero-slider" id="heroSlider"></div>
 
-  <div
-    class="hero-dots"
-    id="heroDots">
-  </div>
+  <div class="hero-dots" id="heroDots"></div>
 
 </section>
 
 
-<!-- =========================================================
-     3. TRENDING
-     ✏️ EDIT TRENDING PRODUCTS IN JAVASCRIPT BELOW
-     ========================================================= -->
+<!-- TRENDING -->
 
 <section class="section">
 
@@ -871,23 +833,14 @@ footer{
 
   </div>
 
-  <!-- SWIPE CAROUSEL -->
-
-  <div
-    class="trending-scroll"
-    id="trendingContainer">
-  </div>
+  <div class="trending-scroll" id="trendingContainer"></div>
 
 </section>
 
 
-<!-- =========================================================
-     4. DON'T MISS THE DEALS
-     ========================================================= -->
+<!-- DEALS -->
 
-<section
-  class="section"
-  style="padding-top:15px;">
+<section class="section" style="padding-top:15px;">
 
   <div class="section-header">
 
@@ -906,17 +859,12 @@ footer{
 
   </div>
 
-  <div
-    class="deals-scroll"
-    id="dealsContainer">
-  </div>
+  <div class="deals-scroll" id="dealsContainer"></div>
 
 </section>
 
 
-<!-- =========================================================
-     5. BRAND MESSAGE
-     ========================================================= -->
+<!-- BRAND MESSAGE -->
 
 <section class="brand-message">
 
@@ -928,9 +876,7 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     6. FOOTER
-     ========================================================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -938,9 +884,7 @@ footer{
 
     <div class="footer-logo">
 
-      <img
-        src="semeologo1.png"
-        alt="SEMEO">
+      <img src="semeologo1.png" alt="SEMEO">
 
     </div>
 
@@ -952,16 +896,16 @@ footer{
           Shop
         </div>
 
+        <a href="ladies-watch.html" class="footer-link">
+          Ladies Watches
+        </a>
+
         <a href="shop.html" class="footer-link">
           All Products
         </a>
 
         <a href="shop.html" class="footer-link">
           Shoes
-        </a>
-
-        <a href="shop.html" class="footer-link">
-          Watches
         </a>
 
         <a href="shop.html" class="footer-link">
@@ -1040,7 +984,7 @@ footer{
     </div>
 
     <div class="footer-bottom">
-      © 2026 SEMEO STORE. All rights reserved.
+      ©️ 2026 SEMEO STORE. All rights reserved.
     </div>
 
   </div>
@@ -1048,13 +992,9 @@ footer{
 </footer>
 
 
-<!-- =========================================================
-     SEARCH PANEL
-     ========================================================= -->
+<!-- SEARCH -->
 
-<div
-  class="search-panel"
-  id="searchPanel">
+<div class="search-panel" id="searchPanel">
 
   <div class="search-top">
 
@@ -1062,9 +1002,7 @@ footer{
       Search Products
     </span>
 
-    <button
-      class="close-btn"
-      onclick="closeSearch()">
+    <button class="close-btn" onclick="closeSearch()">
       ×
     </button>
 
@@ -1079,13 +1017,9 @@ footer{
 </div>
 
 
-<!-- =========================================================
-     MENU
-     ========================================================= -->
+<!-- MENU -->
 
-<div
-  class="menu-panel"
-  id="menuPanel">
+<div class="menu-panel" id="menuPanel">
 
   <div class="menu-top">
 
@@ -1093,9 +1027,7 @@ footer{
       MENU
     </span>
 
-    <button
-      class="close-btn"
-      onclick="closeMenu()">
+    <button class="close-btn" onclick="closeMenu()">
       ×
     </button>
 
@@ -1109,12 +1041,14 @@ footer{
     Shop
   </a>
 
-  <a href="shop.html" class="menu-link">
-    Shoes
+  <!-- LADIES WATCHES -->
+
+  <a href="ladies-watch.html" class="menu-link">
+    Ladies Watches
   </a>
 
   <a href="shop.html" class="menu-link">
-    Watches
+    Shoes
   </a>
 
   <a href="shop.html" class="menu-link">
@@ -1138,9 +1072,7 @@ footer{
 
 <!-- CART MESSAGE -->
 
-<div
-  class="cart-message"
-  id="cartMessage">
+<div class="cart-message" id="cartMessage">
 
   Cart page will be connected when we build the products/cart system.
 
@@ -1150,8 +1082,7 @@ footer{
 <script>
 
 /* =========================================================
-   ✏️ 1. HERO SLIDER
-   ADD / REMOVE / EDIT HERO PRODUCTS HERE
+   HERO SLIDER
    ========================================================= */
 
 const HERO_ITEMS = [
@@ -1168,10 +1099,10 @@ const HERO_ITEMS = [
   {
     image:"ladies-watch.jpg",
     kicker:"TIME TO STYLE",
-    title:"WATCH COLLECTION",
+    title:"LADIES WATCHES",
     subtitle:"Style that speaks without saying a word.",
-    button:"SHOP WATCHES",
-    link:"shop.html"
+    button:"SHOP LADIES WATCHES",
+    link:"ladies-watch.html"
   },
 
   {
@@ -1214,8 +1145,7 @@ const HERO_ITEMS = [
 
 
 /* =========================================================
-   ✏️ 2. TRENDING PRODUCTS
-   MINIMUM 5 PRODUCTS
+   TRENDING PRODUCTS
    ========================================================= */
 
 const TRENDING_PRODUCTS = [
@@ -1225,15 +1155,15 @@ const TRENDING_PRODUCTS = [
     name:"LADIES SHOES",
     description:"Step into your everyday style.",
     price:"₹1,999",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
     image:"ladies-watch.jpg",
-    name:"FOSSIL WATCH",
-    description:"A clean statement piece for your everyday look.",
-    price:"₹1,499",
-    link:"product.html"
+    name:"LADIES WATCHES",
+    description:"Elegant watches for your everyday look.",
+    price:"FROM ₹599",
+    link:"ladies-watch.html"
   },
 
   {
@@ -1241,7 +1171,7 @@ const TRENDING_PRODUCTS = [
     name:"BOYS SHOES",
     description:"Everyday comfort with a clean fashion look.",
     price:"₹1,599",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1249,7 +1179,7 @@ const TRENDING_PRODUCTS = [
     name:"BOYS WATCH",
     description:"Classic style for everyday wear.",
     price:"₹899",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1257,7 +1187,7 @@ const TRENDING_PRODUCTS = [
     name:"BOAT HEADPHONES",
     description:"Style your sound with everyday comfort.",
     price:"₹899",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1265,14 +1195,14 @@ const TRENDING_PRODUCTS = [
     name:"BAGS",
     description:"Carry your everyday essentials in style.",
     price:"₹1,499",
-    link:"product.html"
+    link:"shop.html"
   }
 
 ];
 
 
 /* =========================================================
-   ✏️ 3. DON'T MISS THE DEALS
+   DON'T MISS THE DEALS
    ========================================================= */
 
 const DEAL_PRODUCTS = [
@@ -1283,16 +1213,16 @@ const DEAL_PRODUCTS = [
     oldPrice:"₹2,099",
     price:"₹1,999",
     badge:"OFFER",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
     image:"ladies-watch.jpg",
-    name:"Fossil Watch",
-    oldPrice:"₹1,599",
-    price:"₹1,499",
+    name:"Ladies Watches",
+    oldPrice:"₹699",
+    price:"₹599",
     badge:"OFFER",
-    link:"product.html"
+    link:"ladies-watch.html"
   },
 
   {
@@ -1301,7 +1231,7 @@ const DEAL_PRODUCTS = [
     oldPrice:"₹1,699",
     price:"₹1,599",
     badge:"OFFER",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1310,7 +1240,7 @@ const DEAL_PRODUCTS = [
     oldPrice:"₹999",
     price:"₹899",
     badge:"OFFER",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1319,7 +1249,7 @@ const DEAL_PRODUCTS = [
     oldPrice:"₹999",
     price:"₹899",
     badge:"OFFER",
-    link:"product.html"
+    link:"shop.html"
   },
 
   {
@@ -1328,7 +1258,7 @@ const DEAL_PRODUCTS = [
     oldPrice:"₹1,599",
     price:"₹1,499",
     badge:"OFFER",
-    link:"product.html"
+    link:"shop.html"
   }
 
 ];
