@@ -1,1 +1,61 @@
-EAGLE TIME LW001
+<script>
+let quantity = 1;
+
+function changeImage(element){
+  document.getElementById("mainImage").src = element.src;
+
+  document.querySelectorAll(".thumb").forEach(function(img){
+    img.classList.remove("active");
+  });
+
+  element.classList.add("active");
+}
+
+function selectColor(button,image){
+  document.querySelectorAll(".color-btn").forEach(function(btn){
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+  document.getElementById("mainImage").src = image;
+
+  document.querySelectorAll(".thumb").forEach(function(img){
+    img.classList.remove("active");
+
+    if(img.getAttribute("src") === image){
+      img.classList.add("active");
+    }
+  });
+}
+
+function plusQty(){
+  quantity++;
+  document.getElementById("quantity").innerText = quantity;
+}
+
+function minusQty(){
+  if(quantity > 1){
+    quantity--;
+  }
+
+  document.getElementById("quantity").innerText = quantity;
+}
+
+function orderNow(){
+
+  const selectedColor =
+    document.querySelector(".color-btn.active").innerText;
+
+  const message =
+    "Hello SEMEO STORE,%0A%0A" +
+    "I want to order Eagle Time LW001.%0A" +
+    "Price: ₹599%0A" +
+    "Color: " + selectedColor + "%0A" +
+    "Quantity: " + quantity;
+
+  window.open(
+    "https://wa.me/919074119248?text=" + message,
+    "_blank"
+  );
+}
+</script>
