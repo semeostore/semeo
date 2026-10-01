@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SEМEO STORE</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fff;
+  color:#111;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(15px);
+  z-index:1000;
+  border-bottom:1px solid #eee;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#111;
+  font-size:14px;
+  font-weight:600;
+}
+
+.nav-icons{
+  display:flex;
+  gap:18px;
+  font-size:20px;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  padding-top:70px;
+  display:flex;
+  align-items:flex-end;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.05)),
+  url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2000&q=90");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  color:white;
+  padding:8%;
+  padding-bottom:9%;
+  max-width:650px;
+}
+
+.hero-small{
+  font-size:13px;
+  letter-spacing:3px;
+  margin-bottom:18px;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(55px,9vw,110px);
+  line-height:.88;
+  letter-spacing:-6px;
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.6;
+  max-width:450px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#111;
+  padding:17px 30px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  border-radius:50px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  background:#111;
+  color:#fff;
+}
+
+/* SECTION */
+section{
+  padding:100px 6%;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:45px;
+}
+
+.section-head h2{
+  font-size:45px;
+  letter-spacing:-2px;
+}
+
+.section-head a{
+  color:#111;
+  font-size:14px;
+}
+
+/* CATEGORIES */
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.category{
+  height:450px;
+  position:relative;
+  overflow:hidden;
+  border-radius:3px;
+}
+
+.category img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.category:hover img{
+  transform:scale(1.07);
+}
+
+.category-info{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  color:white;
+}
+
+.category-info h3{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.category-info span{
+  font-size:13px;
+}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product img{
+  width:100%;
+  aspect-ratio:1/1.15;
+  object-fit:cover;
+  background:#f4f4f4;
+}
+
+.product-info{
+  padding:15px 3px;
+}
+
+.product-info h3{
+  font-size:15px;
+  margin-bottom:7px;
+}
+
+.product-info p{
+  font-size:14px;
+  color:#666;
+}
+
+.price{
+  margin-top:10px;
+  font-weight:700;
+  color:#111 !important;
+}
+
+/* BANNER */
+.banner{
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.65),rgba(0,0,0,.1)),
+  url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=2000&q=90");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+}
+
+.banner-content{
+  max-width:600px;
+}
+
+.banner h2{
+  font-size:clamp(45px,7vw,80px);
+  line-height:.95;
+  letter-spacing:-4px;
+  margin-bottom:25px;
+}
+
+.banner p{
+  line-height:1.6;
+  margin-bottom:30px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  padding:70px 6% 30px;
+}
+
+.footer-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+  padding-bottom:60px;
+}
+
+.footer-logo{
+  font-size:35px;
+  font-weight:900;
+}
+
+footer h4{
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+footer a{
+  display:block;
+  color:#aaa;
+  text-decoration:none;
+  margin-bottom:12px;
+  font-size:14px;
+}
+
+footer a:hover{
+  color:#fff;
+}
+
+.copyright{
+  border-top:1px solid #333;
+  padding-top:25px;
+  color:#777;
+  font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+  nav{
+    height:62px;
+    padding:0 5%;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    min-height:90vh;
+  }
+
+  .hero-content{
+    padding:7%;
+    padding-bottom:12%;
+  }
+
+  .hero h1{
+    font-size:64px;
+    letter-spacing:-4px;
+  }
+
+  section{
+    padding:70px 5%;
+  }
+
+  .section-head h2{
+    font-size:35px;
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .category{
+    height:280px;
+  }
+
+  .category-info{
+    left:15px;
+    bottom:15px;
+  }
+
+  .category-info h3{
+    font-size:21px;
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+
+  .product-info h3{
+    font-size:13px;
+  }
+
+  .banner{
+    min-height:500px;
+  }
+
+  .footer-top{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-logo{
+    grid-column:1/-1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+
+  <div class="logo">SEMEO</div>
+
+  <div class="nav-links">
+    <a href="#new">NEW</a>
+    <a href="#shop">SHOP</a>
+    <a href="#categories">CATEGORIES</a>
+    <a href="#about">ABOUT</a>
+  </div>
+
+  <div class="nav-icons">
+    <span>⌕</span>
+    <span>♡</span>
+    <span>🛒</span>
+  </div>
+
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      SEMEO STORE · 2026
+    </div>
+
+    <h1>MOVE<br>YOUR<br>STYLE.</h1>
+
+    <p>
+      Everyday essentials. Modern pieces.
+      Built for your style.
+    </p>
+
+    <a href="#shop" class="btn">
+      SHOP NOW →
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- CATEGORIES -->
+<section id="categories">
+
+  <div class="section-head">
+    <h2>Shop by category</h2>
+    <a href="#shop">View all →</a>
+  </div>
+
+  <div class="categories">
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=85">
+      <div class="category-info">
+        <h3>Women</h3>
+        <span>Explore collection →</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
+      <div class="category-info">
+        <h3>Men</h3>
+        <span>Explore collection →</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85">
+      <div class="category-info">
+        <h3>Watches</h3>
+        <span>Explore collection →</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=85">
+      <div class="category-info">
+        <h3>Bags</h3>
+        <span>Explore collection →</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="shop">
+
+  <div class="section-head">
+    <h2>Featured</h2>
+    <a href="#shop">Shop all →</a>
+  </div>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=85">
+      <div class="product-info">
+        <h3>Classic Watch</h3>
+        <p>Minimal collection</p>
+        <p class="price">₹699</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85">
+      <div class="product-info">
+        <h3>Street Sneakers</h3>
+        <p>Everyday collection</p>
+        <p class="price">₹1,299</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85">
+      <div class="product-info">
+        <h3>Everyday Bag</h3>
+        <p>Essential collection</p>
+        <p class="price">₹899</p>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
+      <div class="product-info">
+        <h3>Essential Tee</h3>
+        <p>Basic collection</p>
+        <p class="price">₹499</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BIG BANNER -->
+<section class="banner" id="new">
+
+  <div class="banner-content">
+
+    <h2>NEW SEASON.<br>NEW ENERGY.</h2>
+
+    <p>
+      Discover pieces made for everyday movement,
+      everyday moments and your everyday style.
+    </p>
+
+    <a href="#shop" class="btn">
+      EXPLORE NOW →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="section-head">
+    <h2>SEMEO</h2>
+  </div>
+
+  <p style="max-width:650px;font-size:20px;line-height:1.7;color:#555;">
+    Semeo Store brings together everyday fashion,
+    accessories and lifestyle essentials at prices
+    made for everyone.
+  </p>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-top">
+
+    <div>
+      <div class="footer-logo">SEMEO</div>
+      <p style="color:#777;margin-top:15px;max-width:300px;">
+        Everyday style. Made simple.
+      </p>
+    </div>
+
+    <div>
+      <h4>SHOP</h4>
+      <a href="#shop">New arrivals</a>
+      <a href="#categories">Men</a>
+      <a href="#categories">Women</a>
+      <a href="#categories">Accessories</a>
+    </div>
+
+    <div>
+      <h4>HELP</h4>
+      <a href="#">Contact</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">FAQs</a>
+    </div>
+
+    <div>
+      <h4>FOLLOW</h4>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Telegram</a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Semeo Store. All rights reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>
