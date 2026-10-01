@@ -1,390 +1,1688 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEMEO — Shop Your Style</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <title>SEMEO STORE</title>
+  <meta name="description" content="SEMEO STORE - Fashion, shoes, watches, headphones and bags.">
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#111;
-  background:#fff;
-}
+  <style>
+    /* =========================================================
+       SEMEO STORE — DESIGN / STYLE
+       Do not edit unless you want to change the design.
+       ========================================================= */
 
-nav{
-  height:70px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 5%;
-  border-bottom:1px solid #eee;
-  position:sticky;
-  top:0;
-  background:#fff;
-  z-index:10;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.logo{
-  font-size:25px;
-  font-weight:800;
-  letter-spacing:4px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.navlinks{
-  display:flex;
-  gap:30px;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      overflow-x: hidden;
+    }
 
-.navlinks a{
-  text-decoration:none;
-  color:#111;
-  font-size:13px;
-  font-weight:600;
-}
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.hero{
-  min-height:600px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:#f2f2f2;
-  padding:60px 20px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.hero h1{
-  font-size:clamp(50px,9vw,110px);
-  line-height:.9;
-  letter-spacing:-5px;
-  font-weight:900;
-}
+    img {
+      display: block;
+      width: 100%;
+    }
 
-.hero p{
-  margin:25px 0;
-  font-size:15px;
-  color:#555;
-}
+    /* =========================
+       HEADER
+       ========================= */
 
-.btn{
-  display:inline-block;
-  background:#111;
-  color:white;
-  text-decoration:none;
-  padding:16px 30px;
-  font-size:13px;
-  font-weight:bold;
-  letter-spacing:1px;
-}
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #eeeeee;
+    }
 
-section{
-  padding:80px 5%;
-}
+    .header-inner {
+      height: 68px;
+      max-width: 1400px;
+      margin: auto;
+      padding: 0 18px;
 
-.section-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  margin-bottom:35px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.section-title h2{
-  font-size:38px;
-  letter-spacing:-2px;
-}
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
 
-.section-title span{
-  color:#777;
-  font-size:13px;
-}
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border: none;
+      background: transparent;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+    }
 
-.product{
-  background:#f5f5f5;
-  overflow:hidden;
-}
+    .icon-btn:active {
+      transform: scale(0.94);
+    }
 
-.product img{
-  width:100%;
-  height:390px;
-  object-fit:cover;
-  display:block;
-}
+    /* =========================
+       OFFER BAR
+       ========================= */
 
-.info{
-  background:white;
-  padding:18px 5px 10px;
-}
+    .offer-bar {
+      background: #111111;
+      color: #ffffff;
+      padding: 11px 16px;
+    }
 
-.info h3{
-  font-size:17px;
-  margin-bottom:8px;
-}
+    .offer-inner {
+      max-width: 1400px;
+      margin: auto;
 
-.price{
-  font-size:15px;
-  font-weight:bold;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
 
-.details{
-  margin-top:10px;
-  color:#777;
-  font-size:12px;
-  line-height:1.7;
-}
+      text-align: center;
+    }
 
-.order{
-  margin-top:15px;
-}
+    .offer-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
 
-.order a{
-  display:inline-block;
-  background:#111;
-  color:#fff;
-  text-decoration:none;
-  padding:11px 18px;
-  font-size:11px;
-  font-weight:bold;
-}
+    .offer-button {
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+    }
 
-.banner{
-  background:#111;
-  color:#fff;
-  text-align:center;
-  padding:100px 20px;
-}
+    /* =========================
+       HERO
+       ========================= */
 
-.banner h2{
-  font-size:clamp(40px,7vw,85px);
-  letter-spacing:-4px;
-}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #f4f4f4;
+    }
 
-.banner p{
-  margin-top:15px;
-  color:#bbb;
-}
+    .hero-slider {
+      display: flex;
+      transition: transform 0.5s ease;
+      touch-action: pan-y;
+    }
 
-footer{
-  padding:50px 5%;
-  display:flex;
-  justify-content:space-between;
-  border-top:1px solid #eee;
-  font-size:12px;
-  color:#777;
-}
+    .hero-slide {
+      min-width: 100%;
+      position: relative;
+      height: calc(100vh - 114px);
+      min-height: 600px;
+      max-height: 900px;
+      overflow: hidden;
+      background: #eaeaea;
+    }
 
-@media(max-width:800px){
-  .navlinks{
-    display:none;
-  }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .products{
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-  }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,0.68) 0%,
+          rgba(0,0,0,0.18) 45%,
+          rgba(0,0,0,0) 75%
+        );
+    }
 
-  .product img{
-    height:260px;
-  }
+    .hero-content {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 62px;
+      color: #ffffff;
+      max-width: 650px;
+      z-index: 2;
+    }
 
-  section{
-    padding:60px 4%;
-  }
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
 
-  .section-title h2{
-    font-size:30px;
-  }
-}
+    .hero-title {
+      font-size: clamp(40px, 9vw, 86px);
+      line-height: 0.92;
+      font-weight: 900;
+      letter-spacing: -3px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
 
-@media(max-width:500px){
-  .products{
-    grid-template-columns:1fr;
-  }
+    .hero-subtitle {
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 350px;
+      margin-bottom: 22px;
+      opacity: 0.95;
+    }
 
-  .product img{
-    height:420px;
-  }
+    .hero-shop {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-  .hero{
-    min-height:520px;
-  }
-}
-</style>
+      min-width: 125px;
+      padding: 13px 22px;
+
+      background: #ffffff;
+      color: #111111;
+
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+
+    .hero-shop:hover {
+      opacity: 0.9;
+    }
+
+    .hero-dots {
+      position: absolute;
+      left: 22px;
+      bottom: 20px;
+      z-index: 5;
+
+      display: flex;
+      gap: 7px;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      background: rgba(255,255,255,0.55);
+      border-radius: 50%;
+      transition: width 0.25s ease, background 0.25s ease;
+    }
+
+    .hero-dot.active {
+      width: 26px;
+      border-radius: 99px;
+      background: #ffffff;
+    }
+
+    /* =========================
+       SECTION BASE
+       ========================= */
+
+    .section {
+      padding: 75px 18px;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 7vw, 58px);
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -2.5px;
+      text-transform: uppercase;
+    }
+
+    .section-description {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #666666;
+      max-width: 480px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       TRENDING
+       ========================= */
+
+    .trending-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: #f3f3f3;
+      overflow: hidden;
+    }
+
+    .trending-image-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1.05;
+      overflow: hidden;
+    }
+
+    .trending-image {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .trending-card:hover .trending-image {
+      transform: scale(1.03);
+    }
+
+    .trending-info {
+      padding: 28px 24px 32px;
+      background: #f3f3f3;
+    }
+
+    .trending-badge {
+      display: inline-block;
+      margin-bottom: 15px;
+
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .trending-name {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .trending-text {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #666666;
+      margin-bottom: 20px;
+      max-width: 450px;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .old-price {
+      font-size: 14px;
+      color: #888888;
+      text-decoration: line-through;
+    }
+
+    .current-price {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 14px 22px;
+      border-radius: 999px;
+
+      background: #111111;
+      color: #ffffff;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       DEALS
+       ========================= */
+
+    .deals-scroll {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+
+    .deals-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .deal-card {
+      flex: 0 0 78%;
+      max-width: 310px;
+      scroll-snap-align: start;
+    }
+
+    .deal-image-wrap {
+      position: relative;
+      aspect-ratio: 0.82;
+      overflow: hidden;
+      background: #f4f4f4;
+    }
+
+    .deal-image {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .deal-card:hover .deal-image {
+      transform: scale(1.03);
+    }
+
+    .deal-badge {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+
+      background: #111111;
+      color: #ffffff;
+
+      padding: 7px 9px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .deal-info {
+      padding-top: 13px;
+    }
+
+    .deal-name {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 7px;
+      line-height: 1.2;
+    }
+
+    .deal-price-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .deal-old-price {
+      font-size: 12px;
+      color: #888888;
+      text-decoration: line-through;
+    }
+
+    .deal-price {
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       MINI INFO SECTION
+       ========================= */
+
+    .brand-message {
+      padding: 85px 18px;
+      text-align: center;
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .brand-message h2 {
+      font-size: clamp(36px, 9vw, 78px);
+      line-height: 0.92;
+      letter-spacing: -3px;
+      font-weight: 900;
+      text-transform: uppercase;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #111111;
+      color: #ffffff;
+      padding: 55px 18px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px 20px;
+      padding-bottom: 40px;
+    }
+
+    .footer-title {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .footer-link {
+      display: block;
+      color: #cccccc;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333333;
+      padding-top: 18px;
+      font-size: 10px;
+      color: #888888;
+      text-align: center;
+    }
+
+    /* =========================
+       SEARCH PANEL
+       ========================= */
+
+    .search-panel {
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.98);
+      z-index: 2000;
+      display: none;
+      padding: 22px;
+    }
+
+    .search-panel.open {
+      display: block;
+    }
+
+    .search-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 35px;
+    }
+
+    .search-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .close-btn {
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .search-input {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #111111;
+      padding: 12px 0;
+      font-size: 28px;
+      outline: none;
+      background: transparent;
+    }
+
+    .search-hint {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777777;
+    }
+
+    /* =========================
+       MENU PANEL
+       ========================= */
+
+    .menu-panel {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(90%, 420px);
+      height: 100vh;
+      background: #ffffff;
+      z-index: 2100;
+      padding: 25px;
+      transition: right 0.35s ease;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+    }
+
+    .menu-panel.open {
+      right: 0;
+    }
+
+    .menu-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 45px;
+    }
+
+    .menu-title {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .menu-link {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       CART NOTICE
+       ========================= */
+
+    .cart-message {
+      position: fixed;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 3000;
+
+      background: #111111;
+      color: #ffffff;
+
+      padding: 15px 18px;
+      border-radius: 12px;
+
+      font-size: 12px;
+      display: none;
+    }
+
+    .cart-message.show {
+      display: block;
+    }
+
+    /* =========================
+       DESKTOP
+       ========================= */
+
+    @media (min-width: 768px) {
+
+      .header-inner {
+        height: 74px;
+        padding: 0 35px;
+      }
+
+      .logo {
+        font-size: 30px;
+      }
+
+      .offer-inner {
+        justify-content: center;
+      }
+
+      .hero-slide {
+        min-height: 700px;
+      }
+
+      .hero-content {
+        left: 55px;
+        bottom: 85px;
+      }
+
+      .hero-dots {
+        left: 55px;
+        bottom: 32px;
+      }
+
+      .section {
+        padding: 110px 40px;
+      }
+
+      .trending-card {
+        grid-template-columns: 1.15fr 0.85fr;
+        min-height: 600px;
+      }
+
+      .trending-image-wrap {
+        aspect-ratio: auto;
+      }
+
+      .trending-info {
+        padding: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .deal-card {
+        flex: 0 0 250px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .brand-message {
+        padding: 120px 40px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">SEMEO</div>
+  <!-- =========================================================
+       1. HEADER
+       Logo + Search + Cart + Menu
+       ========================================================= -->
 
-  <div class="navlinks">
-    <a href="#shop">SHOP</a>
-    <a href="#categories">CATEGORIES</a>
-    <a href="#about">ABOUT</a>
+  <header class="header">
+    <div class="header-inner">
+
+      <!-- LOGO -->
+      <a href="index.html" class="logo">
+        SEMEO
+      </a>
+
+      <div class="header-actions">
+
+        <!-- SEARCH -->
+        <button class="icon-btn" onclick="openSearch()" aria-label="Search">
+          ⌕
+        </button>
+
+        <!-- CART -->
+        <button class="icon-btn" onclick="showCartMessage()" aria-label="Cart">
+          🛒
+        </button>
+
+        <!-- MENU -->
+        <button class="icon-btn" onclick="openMenu()" aria-label="Menu">
+          ☰
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+       2. LIVE OFFER BAR
+       ✏️ EDIT ONLY THIS SECTION
+       ========================================================= -->
+
+  <section class="offer-bar">
+
+    <div class="offer-inner">
+
+      <span class="offer-text" id="liveOfferText">
+        OFFERS UP TO ₹100 FLAT OFFER
+      </span>
+
+      <a href="shop.html" class="offer-button" id="liveOfferButton">
+        SHOP NOW
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       3. HERO SLIDER
+       ✏️ EDIT ONLY THE HERO DATA BELOW
+       ========================================================= -->
+
+  <section class="hero">
+
+    <div class="hero-slider" id="heroSlider"></div>
+
+    <div class="hero-dots" id="heroDots"></div>
+
+  </section>
+
+
+  <!-- =========================================================
+       4. TRENDING
+       ✏️ EDIT ONLY THE TRENDING DATA BELOW
+       ========================================================= -->
+
+  <section class="section">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        What's moving
+      </div>
+
+      <h2 class="section-title">
+        TRENDING
+      </h2>
+
+      <p class="section-description">
+        Discover the product everyone is looking at right now.
+      </p>
+
+    </div>
+
+    <a href="#" id="trendingLink">
+
+      <div class="trending-card">
+
+        <div class="trending-image-wrap">
+          <img
+            src=""
+            alt=""
+            class="trending-image"
+            id="trendingImage"
+          >
+        </div>
+
+        <div class="trending-info">
+
+          <span class="trending-badge" id="trendingBadge">
+            TRENDING NOW
+          </span>
+
+          <h3 class="trending-name" id="trendingName">
+            Product
+          </h3>
+
+          <p class="trending-text" id="trendingText">
+            Product details
+          </p>
+
+          <div class="product-price">
+
+            <span
+              class="old-price"
+              id="trendingOldPrice"
+            ></span>
+
+            <span
+              class="current-price"
+              id="trendingPrice"
+            >
+              ₹0
+            </span>
+
+          </div>
+
+          <span class="primary-button">
+            SHOP NOW →
+          </span>
+
+        </div>
+
+      </div>
+
+    </a>
+
+  </section>
+
+
+  <!-- =========================================================
+       5. DON'T MISS THE DEALS
+       ✏️ EDIT ONLY THE DEAL DATA
+       ========================================================= -->
+
+  <section class="section" style="padding-top: 15px;">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Limited offers
+      </div>
+
+      <h2 class="section-title">
+        DON'T MISS<br>THE DEALS
+      </h2>
+
+      <p class="section-description">
+        Latest offer products, selected for you.
+      </p>
+
+    </div>
+
+    <div
+      class="deals-scroll"
+      id="dealsContainer"
+    ></div>
+
+  </section>
+
+
+  <!-- =========================================================
+       6. BRAND MESSAGE
+       ========================================================= -->
+
+  <section class="brand-message">
+
+    <h2>
+      MORE FASHION.<br>
+      STYLE YOUR FASHION.
+    </h2>
+
+  </section>
+
+
+  <!-- =========================================================
+       7. FOOTER
+       ========================================================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="footer-logo">
+        SEMEO
+      </div>
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-title">Shop</div>
+
+          <a href="shop.html" class="footer-link">
+            All Products
+          </a>
+
+          <a href="shop.html" class="footer-link">
+            Shoes
+          </a>
+
+          <a href="shop.html" class="footer-link">
+            Watches
+          </a>
+
+          <a href="shop.html" class="footer-link">
+            Headphones
+          </a>
+
+          <a href="shop.html" class="footer-link">
+            Bags
+          </a>
+        </div>
+
+        <div>
+          <div class="footer-title">Company</div>
+
+          <a href="#" class="footer-link">
+            About
+          </a>
+
+          <a href="#" class="footer-link">
+            Contact
+          </a>
+
+          <a href="#" class="footer-link">
+            Privacy
+          </a>
+
+          <a href="#" class="footer-link">
+            Terms
+          </a>
+        </div>
+
+        <div>
+          <div class="footer-title">Help</div>
+
+          <a href="#" class="footer-link">
+            Shipping
+          </a>
+
+          <a href="#" class="footer-link">
+            Returns
+          </a>
+
+          <a href="#" class="footer-link">
+            FAQ
+          </a>
+        </div>
+
+        <div>
+          <div class="footer-title">Follow</div>
+
+          <a href="#" class="footer-link">
+            Instagram
+          </a>
+
+          <a href="#" class="footer-link">
+            WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 SEMEO STORE. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       SEARCH PANEL
+       ========================================================= -->
+
+  <div class="search-panel" id="searchPanel">
+
+    <div class="search-top">
+
+      <span class="search-title">
+        Search Products
+      </span>
+
+      <button
+        class="close-btn"
+        onclick="closeSearch()"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <input
+      type="text"
+      class="search-input"
+      id="searchInput"
+      placeholder="Search..."
+      onkeyup="searchProducts()"
+    >
+
+    <p class="search-hint" id="searchHint">
+      Search will connect to the products page.
+    </p>
+
   </div>
-</nav>
 
-<section class="hero">
-  <div>
-    <h1>MOVE<br>YOUR STYLE.</h1>
-    <p>Everyday essentials. Curated for your style.</p>
-    <a href="#shop" class="btn">SHOP NOW</a>
-  </div>
-</section>
 
-<section id="shop">
+  <!-- =========================================================
+       MENU PANEL
+       ========================================================= -->
 
-  <div class="section-title">
-    <h2>NEW ARRIVALS</h2>
-    <span>SEMEO COLLECTION</span>
-  </div>
+  <div class="menu-panel" id="menuPanel">
 
-  <div class="products">
+    <div class="menu-top">
 
-    <!-- PRODUCT 1 -->
-    <div class="product">
-      <img src="ladies-shoes.jpg" alt="Ladies Shoes">
-      <div class="info">
-        <h3>Ladies Shoes Collection</h3>
-        <div class="price">₹1,999</div>
-        <div class="details">
-          Sizes: 6, 7, 8, 9, 10<br>
-          Colours: Black · Off White · Grey
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Ladies%20Shoes%20Collection">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
+      <span class="menu-title">
+        MENU
+      </span>
+
+      <button
+        class="close-btn"
+        onclick="closeMenu()"
+      >
+        ×
+      </button>
+
     </div>
 
-    <!-- PRODUCT 2 -->
-    <div class="product">
-      <img src="ladies-watch.jpg" alt="Ladies Watch">
-      <div class="info">
-        <h3>Ladies Watch Collection</h3>
-        <div class="price">₹1,499</div>
-        <div class="details">
-          Brand: Fossil<br>
-          Colours: Black · Gold · Silver
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Ladies%20Watch%20Collection">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
-    </div>
+    <a href="index.html" class="menu-link">
+      Home
+    </a>
 
-    <!-- PRODUCT 3 -->
-    <div class="product">
-      <img src="boys-shoes.jpg" alt="Boys Shoes">
-      <div class="info">
-        <h3>Boys Shoes Collection</h3>
-        <div class="price">₹1,599</div>
-        <div class="details">
-          Sizes: 6, 7, 8, 9, 10<br>
-          Colours: Black · Grey · Off White
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Boys%20Shoes%20Collection">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
-    </div>
+    <a href="shop.html" class="menu-link">
+      Shop
+    </a>
 
-    <!-- PRODUCT 4 -->
-    <div class="product">
-      <img src="boys-watch.jpg" alt="Boys Watch">
-      <div class="info">
-        <h3>Boys Watch Collection</h3>
-        <div class="price">₹899</div>
-        <div class="details">
-          Colours: Black · Silver · Grey
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Boys%20Watch%20Collection">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
-    </div>
+    <a href="shop.html" class="menu-link">
+      Shoes
+    </a>
 
-    <!-- PRODUCT 5 -->
-    <div class="product">
-      <img src="headphones.jpg" alt="Boat Headphones">
-      <div class="info">
-        <h3>Headphones Collection</h3>
-        <div class="price">₹899</div>
-        <div class="details">
-          Brand: boAt<br>
-          Colours: Black · Blue · Off White
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Headphones">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
-    </div>
+    <a href="shop.html" class="menu-link">
+      Watches
+    </a>
 
-    <!-- PRODUCT 6 -->
-    <div class="product">
-      <img src="bags.jpg" alt="Adidas Bags">
-      <div class="info">
-        <h3>Bags Collection</h3>
-        <div class="price">₹1,499</div>
-        <div class="details">
-          Brand: Adidas<br>
-          Capacity: 75 Litres<br>
-          7 Zips · Multiple Compartments<br>
-          Colours: Black · Grey · Off White · Blue · Cream
-        </div>
-        <div class="order">
-          <a href="https://wa.me/919999999999?text=Hi%20SEMEO,%20I%20want%20Bags%20Collection">
-            ORDER ON WHATSAPP
-          </a>
-        </div>
-      </div>
-    </div>
+    <a href="shop.html" class="menu-link">
+      Headphones
+    </a>
+
+    <a href="shop.html" class="menu-link">
+      Bags
+    </a>
+
+    <a href="#" class="menu-link">
+      About
+    </a>
+
+    <a href="#" class="menu-link">
+      Contact
+    </a>
 
   </div>
-</section>
 
-<div class="banner">
-  <h2>NEW SEASON.<br>NEW ENERGY.</h2>
-  <p>Discover the latest SEMEO collection.</p>
-</div>
 
-<section id="about">
-  <div class="section-title">
-    <h2>SEMEO</h2>
-    <span>STYLE · EVERYDAY</span>
+  <!-- CART MESSAGE -->
+  <div
+    class="cart-message"
+    id="cartMessage"
+  >
+    Cart page will be connected when we build the products/cart system.
   </div>
 
-  <p style="max-width:650px;line-height:1.8;color:#666;">
-    SEMEO brings together everyday fashion, accessories and essentials
-    in one curated collection. Discover products made for your everyday style.
-  </p>
-</section>
 
-<footer>
-  <div>© 2026 SEMEO</div>
-  <div>SHOP · STYLE · EVERYDAY</div>
-</footer>
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    /* =========================================================
+       ✏️  HERO SLIDER DATA
+       Add / remove / edit hero items here only.
+       ========================================================= */
+
+    const HERO_ITEMS = [
+
+      {
+        image: "ladies-shoes.jpg",
+        kicker: "NEW COLLECTION",
+        title: "LADIES SHOES",
+        subtitle: "More fashion. Style your fashion.",
+        button: "SHOP SHOES",
+        link: "shop.html"
+      },
+
+      {
+        image: "ladies-watch.jpg",
+        kicker: "TIME TO STYLE",
+        title: "WATCH COLLECTION",
+        subtitle: "Style that speaks without saying a word.",
+        button: "SHOP WATCHES",
+        link: "shop.html"
+      },
+
+      {
+        image: "boys-shoes.jpg",
+        kicker: "EVERYDAY STYLE",
+        title: "BOYS SHOES",
+        subtitle: "Step into your everyday style.",
+        button: "SHOP SHOES",
+        link: "shop.html"
+      },
+
+      {
+        image: "boys-watch.jpg",
+        kicker: "SMART STYLE",
+        title: "BOYS WATCHES",
+        subtitle: "Clean. Classic. Ready for every day.",
+        button: "SHOP WATCHES",
+        link: "shop.html"
+      },
+
+      {
+        image: "headphones.jpg",
+        kicker: "YOUR SOUND",
+        title: "HEADPHONES",
+        subtitle: "Style your sound.",
+        button: "SHOP HEADPHONES",
+        link: "shop.html"
+      },
+
+      {
+        image: "bags.jpg",
+        kicker: "CARRY YOUR STYLE",
+        title: "BAGS",
+        subtitle: "Made to move with your everyday life.",
+        button: "SHOP BAGS",
+        link: "shop.html"
+      }
+
+    ];
+
+
+    /* =========================================================
+       ✏️ TRENDING PRODUCT
+       Change this section only.
+       ========================================================= */
+
+    const TRENDING_PRODUCT = {
+
+      image: "ladies-watch.jpg",
+
+      name: "FOSSIL WATCH",
+
+      description:
+        "A clean statement piece designed to bring style into your everyday look.",
+
+      oldPrice: "",
+
+      price: "₹1,499",
+
+      link: "product.html"
+
+    };
+
+
+    /* =========================================================
+       ✏️ DON'T MISS THE DEALS
+       Add / remove / edit offer products here.
+       ========================================================= */
+
+    const DEAL_PRODUCTS = [
+
+      {
+        image: "ladies-shoes.jpg",
+        name: "Ladies Shoes",
+        oldPrice: "₹2,099",
+        price: "₹1,999",
+        badge: "OFFER",
+        link: "product.html"
+      },
+
+      {
+        image: "ladies-watch.jpg",
+        name: "Fossil Watch",
+        oldPrice: "₹1,599",
+        price: "₹1,499",
+        badge: "OFFER",
+        link: "product.html"
+      },
+
+      {
+        image: "boys-shoes.jpg",
+        name: "Boys Shoes",
+        oldPrice: "₹1,699",
+        price: "₹1,599",
+        badge: "OFFER",
+        link: "product.html"
+      },
+
+      {
+        image: "boys-watch.jpg",
+        name: "Boys Watch",
+        oldPrice: "₹999",
+        price: "₹899",
+        badge: "OFFER",
+        link: "product.html"
+      },
+
+      {
+        image: "headphones.jpg",
+        name: "boAt Headphones",
+        oldPrice: "₹999",
+        price: "₹899",
+        badge: "OFFER",
+        link: "product.html"
+      },
+
+      {
+        image: "bags.jpg",
+        name: "Adidas Bag",
+        oldPrice: "₹1,599",
+        price: "₹1,499",
+        badge: "OFFER",
+        link: "product.html"
+      }
+
+    ];
+
+
+    /* =========================================================
+       HERO SLIDER ENGINE
+       ========================================================= */
+
+    const heroSlider =
+      document.getElementById("heroSlider");
+
+    const heroDots =
+      document.getElementById("heroDots");
+
+    let currentHero = 0;
+
+
+    function renderHero() {
+
+      heroSlider.innerHTML = "";
+
+      heroDots.innerHTML = "";
+
+      HERO_ITEMS.forEach((item, index) => {
+
+        const slide =
+          document.createElement("div");
+
+        slide.className = "hero-slide";
+
+        slide.innerHTML = `
+
+          <img
+            src="${item.image}"
+            alt="${item.title}"
+            class="hero-image"
+          >
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+
+            <div class="hero-kicker">
+              ${item.kicker}
+            </div>
+
+            <h1 class="hero-title">
+              ${item.title}
+            </h1>
+
+            <p class="hero-subtitle">
+              ${item.subtitle}
+            </p>
+
+            <a
+              href="${item.link}"
+              class="hero-shop"
+            >
+              ${item.button}
+            </a>
+
+          </div>
+
+        `;
+
+        heroSlider.appendChild(slide);
+
+
+        const dot =
+          document.createElement("span");
+
+        dot.className =
+          "hero-dot" +
+          (index === 0 ? " active" : "");
+
+        dot.onclick = () => {
+
+          currentHero = index;
+
+          updateHero();
+
+        };
+
+        heroDots.appendChild(dot);
+
+      });
+
+    }
+
+
+    function updateHero() {
+
+      heroSlider.style.transform =
+        `translateX(-${currentHero * 100}%)`;
+
+      document
+        .querySelectorAll(".hero-dot")
+        .forEach((dot, index) => {
+
+          dot.classList.toggle(
+            "active",
+            index === currentHero
+          );
+
+        });
+
+    }
+
+
+    function nextHero() {
+
+      currentHero++;
+
+      if (currentHero >= HERO_ITEMS.length) {
+        currentHero = 0;
+      }
+
+      updateHero();
+
+    }
+
+
+    setInterval(nextHero, 4500);
+
+    renderHero();
+
+
+    /* =========================================================
+       HERO SWIPE
+       ========================================================= */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    heroSlider.addEventListener(
+      "touchstart",
+      function(event) {
+
+        touchStartX =
+          event.changedTouches[0].screenX;
+
+      },
+      { passive: true }
+    );
+
+
+    heroSlider.addEventListener(
+      "touchend",
+      function(event) {
+
+        touchEndX =
+          event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+      },
+      { passive: true }
+    );
+
+
+    function handleSwipe() {
+
+      const distance =
+        touchEndX - touchStartX;
+
+      if (Math.abs(distance) < 50) {
+        return;
+      }
+
+      if (distance < 0) {
+        nextHero();
+      } else {
+
+        currentHero--;
+
+        if (currentHero < 0) {
+          currentHero =
+            HERO_ITEMS.length - 1;
+        }
+
+        updateHero();
+
+      }
+
+    }
+
+
+    /* =========================================================
+       TRENDING RENDER
+       ========================================================= */
+
+    document.getElementById("trendingImage").src =
+      TRENDING_PRODUCT.image;
+
+    document.getElementById("trendingImage").alt =
+      TRENDING_PRODUCT.name;
+
+    document.getElementById("trendingName").textContent =
+      TRENDING_PRODUCT.name;
+
+    document.getElementById("trendingText").textContent =
+      TRENDING_PRODUCT.description;
+
+    document.getElementById("trendingPrice").textContent =
+      TRENDING_PRODUCT.price;
+
+    document.getElementById("trendingOldPrice").textContent =
+      TRENDING_PRODUCT.oldPrice;
+
+    document.getElementById("trendingLink").href =
+      TRENDING_PRODUCT.link;
+
+
+    /* =========================================================
+       DEAL PRODUCTS RENDER
+       ========================================================= */
+
+    const dealsContainer =
+      document.getElementById("dealsContainer");
+
+
+    DEAL_PRODUCTS.forEach(product => {
+
+      const card =
+        document.createElement("a");
+
+      card.href = product.link;
+
+      card.className = "deal-card";
+
+      card.innerHTML = `
+
+        <div class="deal-image-wrap">
+
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            class="deal-image"
+          >
+
+          <span class="deal-badge">
+            ${product.badge}
+          </span>
+
+        </div>
+
+        <div class="deal-info">
+
+          <div class="deal-name">
+            ${product.name}
+          </div>
+
+          <div class="deal-price-row">
+
+            <span class="deal-old-price">
+              ${product.oldPrice}
+            </span>
+
+            <span class="deal-price">
+              ${product.price}
+            </span>
+
+          </div>
+
+        </div>
+
+      `;
+
+      dealsContainer.appendChild(card);
+
+    });
+
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
+
+    function openSearch() {
+
+      document
+        .getElementById("searchPanel")
+        .classList.add("open");
+
+      setTimeout(() => {
+
+        document
+          .getElementById("searchInput")
+          .focus();
+
+      }, 100);
+
+    }
+
+
+    function closeSearch() {
+
+      document
+        .getElementById("searchPanel")
+        .classList.remove("open");
+
+    }
+
+
+    function searchProducts() {
+
+      const value =
+        document
+          .getElementById("searchInput")
+          .value
+          .trim();
+
+      const hint =
+        document.getElementById("searchHint");
+
+      if (!value) {
+
+        hint.textContent =
+          "Search will connect to the products page.";
+
+        return;
+
+      }
+
+      hint.textContent =
+        `Searching for "${value}"...`;
+
+    }
+
+
+    /* =========================================================
+       MENU
+       ========================================================= */
+
+    function openMenu() {
+
+      document
+        .getElementById("menuPanel")
+        .classList.add("open");
+
+    }
+
+
+    function closeMenu() {
+
+      document
+        .getElementById("menuPanel")
+        .classList.remove("open");
+
+    }
+
+
+    /* =========================================================
+       CART
+       ========================================================= */
+
+    let cartTimer;
+
+
+    function showCartMessage() {
+
+      const message =
+        document.getElementById("cartMessage");
+
+      message.classList.add("show");
+
+      clearTimeout(cartTimer);
+
+      cartTimer =
+        setTimeout(() => {
+
+          message.classList.remove("show");
+
+        }, 2500);
+
+    }
+
+
+    /* =========================================================
+       KEYBOARD ESC
+       ========================================================= */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          closeSearch();
+          closeMenu();
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
